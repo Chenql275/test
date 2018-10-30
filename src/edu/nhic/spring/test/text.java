@@ -1,38 +1,33 @@
 package edu.nhic.spring.test;
 
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 
 import edu.nhic.spring.action.UserAction;
 
 /**
- * @Author ³ÂÇìÂÄ
+ * @Author ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @QQ 812445657
  * @Email 812445657@qq.com
- * @Date 2018Äê8ÔÂ1ÈÕÉÏÎç12:17:56
+ * @Date 2018ï¿½ï¿½8ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½12:17:56
  * 
- * ²âÊÔÀà
- * ½â¾öÒÀÀµ×¢Èë
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
  */
 public class text {
 
 	public static void main(String[] args) {
 
 		/**ApplicationContext 
-		 * ÊÇBeanFactory½Ó¿ÚµÄ×ÓÀà ¹¦ÄÜ¸üÇ¿´ó 
-		 * »áÄ¬ÈÏ³õÊ¼»¯µ¥Àýsingleton bean 
+		 * ï¿½ï¿½BeanFactoryï¿½Ó¿Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¸ï¿½Ç¿ï¿½ï¿½ 
+		 * ï¿½ï¿½Ä¬ï¿½Ï³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½singleton bean 
 		 * */
-		ApplicationContext applicationContext =
-				new ClassPathXmlApplicationContext("/applicationContext.xml");
+		/*ApplicationContext applicationContext =
+				new ClassPathXmlApplicationContext("/applicationContext.xml");*/
 		
 		
-		UserAction action = (UserAction) applicationContext.getBean("action");
+		//UserAction action = (UserAction) applicationContext.getBean("action");
 	
-		action.register();
+		//action.register();
 	}
 
 }
