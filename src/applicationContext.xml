@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spring默认的配置文件名：applicationContext.xml
+	 java:存放在src下
+	 web:存放在WEB-INF下
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+     
+     <!-- dao接口实现类 -->
+     <bean id = "hibernateDao" class = "edu.nhic.spring.dao.UserHibernateDaoImpl" />
+     <bean id = "mybatisDao" class = "edu.nhic.spring.dao.UserMyBatisDaoImpl" />
+
+	 <!-- service -->
+     <bean id = "service" class = "edu.nhic.spring.service.impl.UserServiceImpl">
+     	<!-- 属性ref 用用另一个 Bean -->
+     	<!-- 向UserServiceImpl类注入hibernateDao的Bean的类 -->
+     	<property name = "userDao" ref = "hibernateDao" />
+     </bean>
+     
+     <!-- User -->
+     <bean id = "user" class = "edu.nhic.spring.bean.User">
+     	<!-- property 会调用setter方法注入值 -->
+     	<property name="id" value="1" />
+     	<property name="name" value="陈庆履" />
+     	<property name="sex" value="男" />
+     	<property name="current" ref = "date" />
+     	
+     	<!-- constructor-arg 构造器注入  根据 形参名\索引位置 注入值-->
+     	<constructor-arg name="id" value="1" />
+     	<constructor-arg index="1" value="陈庆履" />
+     	<constructor-arg index="2" value="男" />
+     	<constructor-arg index="3" ref = "date" />
+     </bean>
+     
+     <bean id = "date" class="java.util.Date"></bean>
+     
+     
+     <!-- action -->
+     <bean id = "action" class = "edu.nhic.spring.action.UserAction">
+     	<property name="u" ref= "user" />
+     	<property name="userService" ref="service" />
+     	
+     </bean>
+        
+</beans>
