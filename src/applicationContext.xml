@@ -8,6 +8,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
      
+     <!-- 测试git分支修改文件 -->
      <!-- dao接口实现类 -->
      <bean id = "hibernateDao" class = "edu.nhic.spring.dao.UserHibernateDaoImpl" />
      <bean id = "mybatisDao" class = "edu.nhic.spring.dao.UserMyBatisDaoImpl" />
@@ -41,7 +42,5 @@
      <bean id = "action" class = "edu.nhic.spring.action.UserAction">
      	<property name="u" ref= "user" />
      	<property name="userService" ref="service" />
-     	
      </bean>
-        
 </beans>
